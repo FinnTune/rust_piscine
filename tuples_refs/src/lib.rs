@@ -1,4 +1,5 @@
-// Define the Student tuple struct
+// Derive the Debug trait for the Student tuple struct
+#[derive(Debug)]
 pub struct Student(pub u32, pub String, pub String);
 
 // Function to get the id of the student
