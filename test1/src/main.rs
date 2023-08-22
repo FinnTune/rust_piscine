@@ -1,8 +1,9 @@
-use matrix_transposition::transpose;
-use matrix_transposition::Matrix;
+use borrow::*;
 
 fn main() {
-    let matrix = Matrix((1, 3), (4, 5));
-    println!("Original matrix {:?}", matrix);
-    println!("Transpose matrix {:?}", transpose(matrix));
+    let s = "hello";
+    let s1 = "camelCase".to_string();
+
+    println!("\tstr_len(\"{}\") = {}", s, str_len(s));
+    println!("\tstr_len(\"{}\") = {}", s1, str_len(&s1));
 }
