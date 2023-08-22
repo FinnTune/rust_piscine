@@ -1,3 +1,3 @@
-pub fn doubtful(s: &str) {
+pub fn doubtful(s: String) {
     s.push('!');
 }
