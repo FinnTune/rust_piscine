@@ -1,11 +1,6 @@
-use doubtful::doubtful;
+use to_url::*;
 
 fn main() {
-    let mut s = String::from("Hello");
-
-    println!("Before changing the string: {}", s);
-
-    doubtful(&mut s);
-
-    println!("After changing the string: {}", s);
+    let s = "Hello, world!";
+    println!("{} to be use as an url is {}", s, to_url(s));
 }
