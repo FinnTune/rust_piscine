@@ -1,24 +1,29 @@
 pub fn delete_and_backspace(s: &mut String) {
-    let mut result = String::new();
-    let chars = s.chars().collect::<Vec<char>>();
-    let mut i = 0;
+    let mut stack = Vec::new();
+    let mut skip = false;
 
-    while i < chars.len() {
-        if chars[i] == '-' {
-            if !result.is_empty() {
-                result.pop();
-            }
-        } else if chars[i] == '+' {
-            i += 1; // Skip the next character and continue
+    for char in s.chars() {
+        if skip {
+            skip = false;
             continue;
-        } else {
-            result.push(chars[i]);
         }
-        i += 1;
+
+        match char {
+            '-' => {
+                stack.pop();
+            }
+            '+' => {
+                skip = true;
+            }
+            _ => {
+                stack.push(char);
+            }
+        }
     }
 
-    *s = result;
+    *s = stack.iter().collect();
 }
+
 
 
 pub fn do_operations(v: &mut Vec<String>) {
