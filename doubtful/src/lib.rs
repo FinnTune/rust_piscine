@@ -1,3 +1,4 @@
-pub fn doubtful(s: String) {
-    s.push('!');
+//pass string value to a function
+pub fn doubtful(s: &mut String) {
+    s.push('?');
 }
