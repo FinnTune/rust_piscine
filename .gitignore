@@ -15,8 +15,8 @@ Cargo.lock
 *.pdb
 
 # Ignore executables (Linux typically has no extension for executables)
-*[^.]*
-
+#*[^.]*
+# but also ignores directories
 
 # Added by cargo
 
