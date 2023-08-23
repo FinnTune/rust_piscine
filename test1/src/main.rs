@@ -1,6 +1,13 @@
-use name_initials::initials;
+use changes::*;
 
 fn main() {
-    let names = vec!["Harry Potter", "Someone Else", "J. L.", "Barack Obama"];
-    println!("{:?}", initials(names));
+    // bedroom
+    let mut lights = vec![
+        Light::new("living_room"),
+        Light::new("bedroom"),
+        Light::new("rest_room"),
+    ];
+    println!("brightness = {}", lights[0].brightness);
+    change_brightness(&mut lights, "living_room", 200);
+    println!("new brightness = {}", lights[0].brightness);
 }
