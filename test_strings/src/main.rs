@@ -1,8 +1,12 @@
-use strings::*;
+use edit_distance;
 
 fn main() {
-    println!("length of {} = {}", "❤", char_length("❤"));
-    println!("length of {} = {}", "形声字", char_length("形聲字"));
-    println!("length of {} = {}", "change", char_length("change"));
-    println!("length of {} = {}", "😍", char_length("😍"));
+    let source = "alignment";
+    let target = "assignment";
+    println!(
+        "It's necessary to make {} change(s) to {}, to get {}",
+        edit_distance(source, target),
+        source,
+        target
+    );
 }
